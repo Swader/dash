@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Diffbot Account Dashboard</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+          name="viewport">
+
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+          href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <!--Switch the two lines below to turn dev mode on/off-->
+    <!--<link rel="stylesheet" href="dist/css/app.min.css">-->
+    <link rel="stylesheet" href="dist/css/app.dev.css">
+
+
+</head>
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to get the
+desired effect, and don't forget to change the skin to be used in assets/assets.ini
+|---------------------------------------------------------|
+| SKINS         | skin-blue                               |
+|               | skin-black                              |
+|               | skin-purple                       z      |
+|               | skin-yellow                             |
+|               | skin-red                                |
+|               | skin-green                              |
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | fixed                                   |
+|               | layout-boxed                            |
+|               | layout-top-nav                          |
+|               | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
+<body class="hold-transition skin-yellow sidebar-mini">
+<div class="wrapper" id="app">
+
+    <header class="main-header">
+
+        <a href="http://diffbot.com" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini"><img width="50"
+                                         src="dist/img/diffy_home.png"
+                                         alt="Diffbot Logo"></span>
+            <!-- logo for regular state and mobile devices -->
+          <span class="logo-lg"><img height="50" src="dist/img/diffbot_logo.png"
+                                     alt="Diffbot Logo"></span>
+        </a>
+
+        <!-- Header Navbar -->
+        <nav class="navbar navbar-static-top" role="navigation">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas"
+               role="button">
+                <span class="sr-only">Toggle navigation</span>
+            </a>
+            <!-- Navbar Right Menu -->
+            <div class="navbar-custom-menu">
+                <!--Nothing here for now-->
+            </div>
+        </nav>
+    </header>
+
+    <aside class="main-sidebar">
+
+        <section class="sidebar">
+
+            <tokenform :token="sharedState.token"></tokenform>
+
+            <!-- Sidebar Menu -->
+            <ul class="sidebar-menu">
+                <li class="header">DETAILS</li>
+                <!-- Optionally, you can add icons to the links -->
+                <li v-link="'/dashboard'"><a v-link="'/dashboard'"><i
+                        class="fa fa-link"></i>
+                    <span>Dashboard</span></a></li>
+                <li v-link="'/extra'"><a v-link="'/extra'"><i
+                        class="fa fa-link"></i>
+                    <span>Extra screen</span></a></li>
+                <li><a href="javascript:void(0)"
+                       onclick="localStorage.clear();location.reload()">Dev mode: clear all</a>
+                </li>
+
+            </ul><!-- /.sidebar-menu -->
+
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+
+    <router-view :info="info" :options="options"></router-view>
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+        <!-- To the right -->
+        <div class="pull-right hidden-xs">
+            Made with VueJS, AdminLTE, and <a
+                href="http://diffbot-php-client-docs.readthedocs.org">Diffbot's PHP Client</a>
+        </div>
+        <!-- Default to the left -->
+        <strong>Copyright &copy; 2016 <a
+                href="https://twitter.com/bitfalls">Bruno Skvorc</a> @ <a
+                href="http://diffbot.com">Diffbot</a>.</strong> All rights reserved.
+    </footer>
+    <div class="loading" v-if="sharedState.overlay"></div>
+</div><!-- ./wrapper -->
+
+<script src="dist/js/vue.js"></script>
+<script src="dist/js/vue-resource.js"></script>
+<script src="dist/js/vue-router.js"></script>
+
+<!--Uncomment below and comment above for dev mode-->
+<!--<script src="dist/js/vue.min.js"></script>-->
+<!--<script src="dist/js/vue-resource.min.js"></script>-->
+<!--<script src="dist/js/vue-router.min.js"></script>-->
+
+<!--Switch the two lines below to turn dev mode on / off-->
+<!--<script src="dist/js/app.min.js"></script>-->
+<script src="dist/js/app.dev.js"></script>
+
+</body>
+</html>

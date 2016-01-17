@@ -1,0 +1,10 @@
+{
+    "name": "Skeleton AdminLTE-Vue-PHP Dash",
+    "authors": [
+        "Bruno Skvorc <bruno@skvorc.me>"
+    ],
+    "private": true,
+    "dependencies": {
+
+    }
+}
