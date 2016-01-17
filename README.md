@@ -14,6 +14,17 @@ This is a version of [AdminLTE](https://github.com/almasaeed2010/AdminLTE) confi
 
 ## Compilation
 
+To get started and have a working copy:
+
+```
+composer install
+vendor/bin/bowerphp install
+cd assets
+../vendor/bin/robo assets:build
+```
+
+After these 4 commands you'll be able to visit the site in the browser and use it. Read below for more information on compiling assets.
+
 ### Manually compiling assets
 
 Inside the `assets` folder:
