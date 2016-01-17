@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Diffbot Account Dashboard</title>
+    <title>Swader/dash - skeleton vue/adminlte dashboard</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
           name="viewport">
 
@@ -26,7 +26,7 @@ desired effect, and don't forget to change the skin to be used in assets/assets.
 |---------------------------------------------------------|
 | SKINS         | skin-blue                               |
 |               | skin-black                              |
-|               | skin-purple                       z      |
+|               | skin-purple                             |
 |               | skin-yellow                             |
 |               | skin-red                                |
 |               | skin-green                              |
@@ -43,14 +43,14 @@ desired effect, and don't forget to change the skin to be used in assets/assets.
 
     <header class="main-header">
 
-        <a href="http://diffbot.com" class="logo">
+        <a href="/" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><img width="50"
-                                         src="dist/img/diffy_home.png"
-                                         alt="Diffbot Logo"></span>
+                                         src="http://lorempixel.com/g/50/50/abstract/Logo"
+                                         alt="Logo"></span>
             <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><img height="50" src="dist/img/diffbot_logo.png"
-                                     alt="Diffbot Logo"></span>
+          <span class="logo-lg"><img height="50" src="http://lorempixel.com/g/300/100/abstract/Wide-Logo"
+                                     alt="Logo"></span>
         </a>
 
         <!-- Header Navbar -->
@@ -71,11 +71,9 @@ desired effect, and don't forget to change the skin to be used in assets/assets.
 
         <section class="sidebar">
 
-            <tokenform :token="sharedState.token"></tokenform>
-
             <!-- Sidebar Menu -->
             <ul class="sidebar-menu">
-                <li class="header">DETAILS</li>
+                <li class="header">Menu</li>
                 <!-- Optionally, you can add icons to the links -->
                 <li v-link="'/dashboard'"><a v-link="'/dashboard'"><i
                         class="fa fa-link"></i>
@@ -93,21 +91,23 @@ desired effect, and don't forget to change the skin to be used in assets/assets.
         <!-- /.sidebar -->
     </aside>
 
-    <router-view :info="info" :options="options"></router-view>
+    <div class="content-wrapper">
+        <router-view :info="info" :options="options"></router-view>
+    </div>
+
+
 
     <!-- Main Footer -->
     <footer class="main-footer">
         <!-- To the right -->
         <div class="pull-right hidden-xs">
-            Made with VueJS, AdminLTE, and <a
-                href="http://diffbot-php-client-docs.readthedocs.org">Diffbot's PHP Client</a>
+            Made from desire to be rid of NodeJS <3
         </div>
         <!-- Default to the left -->
         <strong>Copyright &copy; 2016 <a
-                href="https://twitter.com/bitfalls">Bruno Skvorc</a> @ <a
-                href="http://diffbot.com">Diffbot</a>.</strong> All rights reserved.
+                href="https://twitter.com/bitfalls">Bruno Skvorc</a></strong> All rights reserved.
     </footer>
-    <div class="loading" v-if="sharedState.overlay"></div>
+    <div class="loading" v-if="sharedState.overlay" style="display: none;"></div>
 </div><!-- ./wrapper -->
 
 <script src="dist/js/vue.js"></script>
