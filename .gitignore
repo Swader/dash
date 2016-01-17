@@ -2,7 +2,7 @@
 vendor
 composer.phar
 /node_modules/
-bower_components/*
+assets/bower/*
 
 # IntelliJ
 .idea
