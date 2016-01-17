@@ -5,6 +5,8 @@
     ],
     "private": true,
     "dependencies": {
-
+        "vue": "*",
+        "vue-resource": "*",
+        "vue-router": "*"
     }
 }
